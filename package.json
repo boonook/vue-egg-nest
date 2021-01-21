@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@puckwang/vue-slot-machine": "^0.0.11",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "konva": "^7.2.2",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "vue": "^2.6.11",
+    "vue-socket.io": "^3.0.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -32,7 +37,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-debugger": "off",
+      "no-console": "off"
+    }
   },
   "browserslist": [
     "> 1%",
