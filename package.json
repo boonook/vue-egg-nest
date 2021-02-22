@@ -11,10 +11,10 @@
     "@puckwang/vue-slot-machine": "^0.0.11",
     "core-js": "^3.6.5",
     "konva": "^7.2.2",
+    "moment": "^2.29.1",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
-    "vue": "^2.6.11",
-    "vue-socket.io": "^3.0.10"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

@@ -95,7 +95,22 @@
     </div>
     <div>
       <div @click="_onRequest" style="background-color: orangered;height:48px;line-height:48px;text-align: center;border-radius:8px;margin:40px;color:#fff">
-        发起post请求
+        egg发起post请求
+      </div>
+    </div>
+    <div>
+      <div @click="_onRequestNest" style="background-color: orangered;height:48px;line-height:48px;text-align: center;border-radius:8px;margin:40px;color:#fff">
+        nestjs发起post请求
+      </div>
+    </div>
+    <div>
+      <div @click="_onRequestNestGet" style="background-color: orangered;height:48px;line-height:48px;text-align: center;border-radius:8px;margin:40px;color:#fff">
+        nestjs发起get请求
+      </div>
+    </div>
+    <div>
+      <div @click="_onRequestNestDel" style="background-color: orangered;height:48px;line-height:48px;text-align: center;border-radius:8px;margin:40px;color:#fff">
+        nestjs发起delete请求
       </div>
     </div>
     <hr/>
@@ -109,6 +124,7 @@
     <div>
       <tiger></tiger>
     </div>
+    <div id="ad_u123456"></div>
   </div>
 </template>
 
@@ -118,7 +134,8 @@ import getAward from './components/get-award/get-award2'
 import marquees from './components/marquees/marquees'
 import eggNiu from './components/egg-niu/egg-niu'
 import slotMachine from './components/slot-machine'
-import tiger from './components/tiger'
+import tiger from './components/tiger';
+import moment from 'moment'
 let tdata = [];
 for (let i = 0; i < 20; i++) {
   tdata.push({
@@ -165,7 +182,7 @@ export default {
         .map(s => `${ s.name }成功抢到`)
     },
     _onRequest(){
-      let params = {name:'boonook',pwd:'123456'}
+      let params = {name:'boonook',pwd:'123456'};
       fetch('http://127.0.0.1:7001/api/user/login',{
         method:"POST",   //请求方法
         body:JSON.stringify(params),   //请求体
@@ -177,14 +194,100 @@ export default {
       }).catch((error) => {
         alert(error)
       })
+    },
+    _onRequestNest(){
+      let params = {username:'boonook',password:'12345'};
+      fetch('http://127.0.0.1:3003/user/login',{
+        method:"POST",   //请求方法
+        body:JSON.stringify(params),   //请求体
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }).then(res=>{
+        return  res.json();
+      }).then(function(json) {
+        console.log(json);
+      });
+    },
+    _onRequestNestGet(){
+      fetch('http://127.0.0.1:3003/article/list',{
+        method:"GET",   //请求方法
+      }).then(res=>{
+        return  res.json();
+      }).then(function(json) {
+        console.log(json);
+      });
+    },
+    _onRequestNestDel(){
+      fetch('http://127.0.0.1:3003/cats/del/2',{
+        method:"DELETE",   //请求方法
+      }).then(res=>{
+        return  res.json();
+      }).then(function(json) {
+        console.log(json);
+      });
+    },
+    curry(fn){
+      let length = fn.length;
+      let args = [];
+      return function curryFn(...curryArgs) {
+        args = args.concat(curryArgs);
+        if (args.length > length) {
+          throw new Error('arguments length error')
+        }
+        if (args.length === length) {
+          return fn(...args);
+        }
+        return curryFn;
+      }
+    },
+    foo(a,b,c){
+      return a + b + c
+    },
+    getDouYuList(){
+      fetch('http://localhost:3003/httprequest/list',{
+        method:"GET",   //请求方法
+      }).then(res=>{
+        return  res.json();
+      }).then(function(json) {
+        let times = moment(json.timeStamp).format('YYYY-MM-DD HH:mm:ss');
+        console.log(times);
+      });
     }
   },
   mounted() {
     let data = this.getArrayDta();
-    console.log(data)
-  }
+    console.log(data);
+    (window.slotbydup=window.slotbydup || []).push({
+      id: '3030834',
+      container: 'ad_u123456'
+    });
+    //手动实现柯里化函数
+    const curry_fn = this.curry(this.foo);
+    console.log(curry_fn(1)(2)(3));
+    if (window.WebSocket)
+    {
+      console.log("支持");
+    }else
+    {
+      console.log("不支持");
+    }
+    let ws = new WebSocket("ws://localhost:3007");
+    ws.onopen = function() {
+      console.log("client：打开连接");
+      let msg = {type:'test',id:'1453855454'};
+      ws.send(JSON.stringify(msg));
+      ws.send("client：hello，服务端");
+    };
+    ws.onmessage = function(e) {
+      console.log("client：接收到服务端的消息 " + e.data);
+      //   setTimeout(() => {
+      //     ws.close();
+      //   }, 5000);
+    };
+  },
 }
-</script>
+</script>e.data
 
 <style>
   #app{
