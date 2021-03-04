@@ -75,13 +75,13 @@
     <div>
       <button @click="show">show picker</button>
       <VuePicker :data="pickData"
-                 :showToolbar="true"
-                 @cancel="cancel"
-                 :defaultIndex="[3,5,6,4]"
-                 @confirm="confirm"
-                 @change="onChange"
-                 :rowNumber="7"
-                 :visible.sync="pickerVisible"
+         :showToolbar="true"
+         @cancel="cancel"
+         :defaultIndex="[3,5,6,4]"
+         @confirm="confirm"
+         @change="onChange"
+         :rowNumber="7"
+         :visible.sync="pickerVisible"
       />
     </div>
     <div>
@@ -124,7 +124,16 @@
     <div>
       <tiger></tiger>
     </div>
+    <div>
+      <h1>大转盘</h1>
+      <rotate></rotate>
+    </div>
     <div id="ad_u123456"></div>
+    <div>
+        <div class="niu">
+
+        </div>
+    </div>
   </div>
 </template>
 
@@ -135,6 +144,7 @@ import marquees from './components/marquees/marquees'
 import eggNiu from './components/egg-niu/egg-niu'
 import slotMachine from './components/slot-machine'
 import tiger from './components/tiger';
+import rotate from './components/dazhuanpan/rotate';
 import moment from 'moment'
 let tdata = [];
 for (let i = 0; i < 20; i++) {
@@ -146,7 +156,7 @@ for (let i = 0; i < 20; i++) {
 export default {
   name: 'App',
   components: {
-    VuePicker,getAward,marquees,eggNiu,slotMachine,tiger
+    VuePicker,getAward,marquees,eggNiu,slotMachine,tiger,rotate
   },
   data(){
     return{
@@ -296,5 +306,21 @@ export default {
     display: flex;
     flex-direction: column;
     background-color:rgba(0,0,0,0.3);
+  }
+  .niu{
+    width:98.33px;
+    height:103px;
+    margin:0 auto;
+    background-image: url("./assets/niu.jpg");
+    background-size: auto 103px;
+    animation: ox1 1s steps(6,start) 0ms infinite normal backwards;
+  }
+  @keyframes ox1 {
+    0%{
+      background-position:0 0;
+    }
+    100%{
+      background-position:-590px 0;
+    }
   }
 </style>
