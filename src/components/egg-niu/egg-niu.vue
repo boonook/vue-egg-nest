@@ -64,7 +64,7 @@
     .qiu1{
       left:5px;
       bottom:0;
-      animation:dialuodn 1s linear 0.1s forwards;
+      animation:dialuodn 1s ease 0.1s forwards ;
     }
     .qiu1:after{content:"";
       position:absolute;
@@ -74,57 +74,57 @@
       background:url(./images/prize1.png) no-repeat;
       display:block;
       background-size:100%;
-      animation:around1 1s linear forwards ;
+      animation:around1 1s ease forwards ;
     }
     .qiu2{
       left:60px;
       bottom:0;
-      animation:dialuodn 1s linear 0.2s backwards;
+      animation:dialuodn 1s ease 0.2s backwards;
     }
     .qiu3{
       left:120px;
       bottom:0;
-      animation:dialuodn 1s linear 0.3s backwards;
+      animation:dialuodn 1s ease 0.3s backwards;
     }
     .qiu4{
       left:180px;
       bottom:0;
-      animation:dialuodn 1s linear 0.4s backwards
+      animation:dialuodn 1s ease 0.4s backwards
     }
     .qiu5{
       left:240px;
       bottom:0;
-      animation:dialuodn 1s linear 0.5s backwards;
+      animation:dialuodn 1s ease 0.5s backwards;
     }
     .qiu6{
       left:30px;
       bottom:40px;
-      animation:dialuodn 1s linear 0.6s backwards;
+      animation:dialuodn 1s ease 0.6s backwards;
     }
     .qiu7{
       left:90px;
       bottom:40px;
-      animation:dialuodn 1s linear 0.7s backwards;
+      animation:dialuodn 1s ease 0.7s backwards;
     }
     .qiu8{
       left:150px;
       bottom:40px;
-      animation:dialuodn 1s linear 0.8s backwards;
+      animation:dialuodn 1s ease 0.8s backwards;
     }
     .qiu9{
       left:210px;
       bottom:40px;
-      animation:dialuodn 1s linear 0.9s backwards;
+      animation:dialuodn 1s ease 0.9s backwards;
     }
     .qiu10{
       left:0;
       bottom:80px;
-      animation:dialuodn 1s linear 1s backwards
+      animation:dialuodn 1s ease 1s backwards
     }
     .qiu11{
       left:60px;
       bottom:80px;
-      animation:dialuodn 1s linear 1.1s backwards;
+      animation:dialuodn 1s ease 1.1s backwards;
     }
     @keyframes dialuodn {
       0% {

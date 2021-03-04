@@ -114,21 +114,20 @@
       </div>
     </div>
     <hr/>
-    <div>
-      <h1>老虎机</h1>
-      <div>
-        <slotMachine/>
-      </div>
-    </div>
+<!--    <div>-->
+<!--      <h1>老虎机</h1>-->
+<!--      <div>-->
+<!--        <slotMachine/>-->
+<!--      </div>-->
+<!--    </div>-->
     <hr/>
     <div>
       <tiger></tiger>
     </div>
     <div>
       <h1>大转盘</h1>
-      <rotate></rotate>
+      <rotate height="300"></rotate>
     </div>
-    <div id="ad_u123456"></div>
     <div>
         <div class="niu">
 
@@ -142,7 +141,7 @@ import VuePicker from './components/picker/picker.vue';
 import getAward from './components/get-award/get-award2'
 import marquees from './components/marquees/marquees'
 import eggNiu from './components/egg-niu/egg-niu'
-import slotMachine from './components/slot-machine'
+// import slotMachine from './components/slot-machine'
 import tiger from './components/tiger';
 import rotate from './components/dazhuanpan/rotate';
 import moment from 'moment'
@@ -156,7 +155,7 @@ for (let i = 0; i < 20; i++) {
 export default {
   name: 'App',
   components: {
-    VuePicker,getAward,marquees,eggNiu,slotMachine,tiger,rotate
+    VuePicker,getAward,marquees,eggNiu,tiger,rotate
   },
   data(){
     return{
