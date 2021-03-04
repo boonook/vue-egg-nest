@@ -114,12 +114,6 @@
       </div>
     </div>
     <hr/>
-<!--    <div>-->
-<!--      <h1>老虎机</h1>-->
-<!--      <div>-->
-<!--        <slotMachine/>-->
-<!--      </div>-->
-<!--    </div>-->
     <hr/>
     <div>
       <tiger></tiger>
@@ -132,6 +126,16 @@
         <div class="niu">
 
         </div>
+    </div>
+    <div>
+      <h1>@keyframes</h1>
+      <h1>animation</h1>
+      <h1>animation-name</h1>
+      <h1>animation-duration</h1>
+      <h1>animation-timing-function</h1>
+      <h1>animation-delay</h1>
+      <h1>animation-iteration-count</h1>
+      <h1>animation-direction</h1>
     </div>
   </div>
 </template>
@@ -164,7 +168,8 @@ export default {
         tdata,tdata,tdata,tdata
       ],
       result: '',
-      list:[{name:'张三'},{name:'李四'},{name:'王五'}]
+      list:[{name:'张三'},{name:'李四'},{name:'王五'}],
+      datasource:[{},{},{},{},{},{},{},{}]
     }
   },
   methods:{
