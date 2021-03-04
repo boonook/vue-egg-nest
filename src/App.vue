@@ -119,6 +119,9 @@
       <tiger></tiger>
     </div>
     <div>
+      <div style="background-color: orangered;height:48px;line-height:48px;text-align: center;border-radius:8px;margin:40px;color:#fff">
+        聊天室
+      </div>
       <h1>大转盘</h1>
       <rotate height="300"></rotate>
     </div>
